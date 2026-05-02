@@ -1,0 +1,140 @@
+.footer {
+  width: 100%;
+  border-top: 1px solid rgba(0, 255, 136, 0.15);
+  background: rgba(8, 12, 10, 0.95);
+  margin-top: auto;
+}
+
+/* mobile first */
+.inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 1rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Logo */
+.logo {
+  font-family: "Orbitron", monospace;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #00ff88;
+  text-shadow:
+    0 0 8px #00ff88,
+    0 0 20px #00ff8866;
+}
+
+.zero {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: #7aab8a;
+  max-width: 320px;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  padding: 0.4rem 0.8rem;
+  font-family: "Orbitron", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #7aab8a;
+  border-radius: 0.5rem;
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.link:hover {
+  color: #00ff88;
+  background: rgba(0, 255, 136, 0.06);
+}
+
+/* Discord */
+.discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.25rem;
+  font-family: "Orbitron", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  border-radius: 0.5rem;
+  transition: all 180ms ease;
+  flex-shrink: 0;
+}
+
+.discord:hover {
+  color: #080c0a;
+  background: #00ff88;
+  border-color: #00ff88;
+  box-shadow:
+    0 0 12px #00ff88,
+    0 0 30px #00ff8866;
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid rgba(0, 255, 136, 0.08);
+  padding: 0.85rem 1rem 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #3d6b4f;
+  letter-spacing: 0.05em;
+}
+
+/* tablet+ */
+@media (min-width: 640px) {
+  .inner {
+    padding: 2.5rem 1.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .left {
+    min-width: 200px;
+  }
+
+  .desc {
+    max-width: 280px;
+  }
+}
+
+/* крупные экраны (опционально) */
+@media (min-width: 1024px) {
+  .inner {
+    gap: 2.5rem;
+  }
+}

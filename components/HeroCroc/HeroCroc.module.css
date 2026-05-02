@@ -1,0 +1,78 @@
+.crocStage {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  pointer-events: none;
+}
+
+.crocBox {
+  position: relative;
+  width: min(96vw, 560px);
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  overflow: visible;
+  background: transparent;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  pointer-events: none;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .crocStage {
+    display: none;
+  }
+}
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .crocBox {
+    width: min(62vw, 760px);
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .crocBox {
+    width: clamp(620px, 46vw, 900px);
+    min-width: 620px;
+    transform: translateY(14px);
+  }
+}
+
+/* 1440 - 1919 */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .crocBox {
+    width: clamp(760px, 52vw, 1180px);
+    min-width: 760px;
+    transform: translateY(18px);
+  }
+}
+
+/* 1920 - 2559 */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .crocBox {
+    width: clamp(920px, 58vw, 1380px);
+    min-width: 920px;
+    transform: translateY(24px);
+  }
+}
+
+/* 2560+ */
+@media (min-width: 2560px) {
+  .crocBox {
+    width: clamp(1100px, 62vw, 1650px);
+    min-width: 1100px;
+    transform: translateY(28px);
+  }
+}

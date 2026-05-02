@@ -1,0 +1,145 @@
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: #080c0a;
+  padding: 2rem;
+  text-align: center;
+}
+
+.glitch {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 20vw, 12rem);
+  font-weight: 900;
+  color: #00ff88;
+  text-shadow:
+    0 0 20px #00ff88,
+    0 0 60px #00ff8855;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  animation: glitch 3s infinite;
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  color: #ff4466;
+  animation: glitchTop 3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+
+.glitch::after {
+  color: #00ccff;
+  animation: glitchBot 3s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 1px);
+  }
+  94% {
+    transform: translate(2px, -1px);
+  }
+  96% {
+    transform: translate(-1px, 2px);
+  }
+}
+
+@keyframes glitchTop {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(3px, 0);
+  }
+  94% {
+    transform: translate(-3px, 0);
+  }
+}
+
+@keyframes glitchBot {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-3px, 0);
+  }
+  94% {
+    transform: translate(3px, 0);
+  }
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #e8f5ec;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.desc {
+  font-size: var(--text-sm);
+  color: #7aab8a;
+  max-width: 36ch;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #080c0a;
+  background: #00ff88;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow:
+    0 0 8px #00ff88,
+    0 0 20px #00ff8866;
+  transition: all 180ms ease;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background: #33ffaa;
+  box-shadow:
+    0 0 12px #00ff88,
+    0 0 30px #00ff8888;
+  transform: translateY(-1px);
+}
+.countdown {
+  font-size: var(--text-sm);
+  color: #7aab8a;
+}
+
+.countNum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #00ff88;
+  text-shadow: 0 0 8px #00ff8888;
+}

@@ -1,0 +1,359 @@
+.page {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 1.25rem 1rem 2rem;
+  overflow-x: clip;
+}
+
+.pageInner {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.cardHeaderRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.backChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 136, 0.18);
+  background: rgba(0, 255, 136, 0.04);
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.backArrow {
+  color: var(--neon-green);
+  text-shadow: var(--neon-glow);
+}
+
+.headerCard {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(0, 255, 136, 0.035), rgba(0, 255, 136, 0.015)),
+    var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 136, 0.03) inset,
+    0 0 24px rgba(0, 255, 136, 0.04);
+}
+
+.headerInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.nameRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.metaSep {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 255, 136, 0.18);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.12);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tabButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.tabButtonActive {
+  color: var(--neon-green);
+  border-color: rgba(0, 255, 136, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 136, 0.04) inset,
+    0 0 14px rgba(0, 255, 136, 0.06);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section {
+  padding: 1.1rem;
+  border-radius: 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sectionAccentBar {
+  width: 4px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--neon-green);
+  box-shadow: var(--neon-glow);
+  flex-shrink: 0;
+}
+
+.pillsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.ratingPill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 136, 0.08);
+}
+
+.descriptionCard {
+  padding: 1rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 255, 136, 0.08);
+}
+
+.loadingText {
+  margin-top: 1rem;
+  color: var(--text-faint);
+  font-size: var(--text-sm);
+}
+
+/* skeleton blocks */
+
+.emblemSkeleton,
+.tagSkeleton,
+.nameSkeleton,
+.metaSkeleton,
+.statusSkeleton,
+.mottoSkeleton,
+.wgBtnSkeleton,
+.sectionTitleSkeleton,
+.pillLabelSkeleton,
+.pillValueSkeleton,
+.pillFooterSkeleton,
+.descriptionLine {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0.03) 20%,
+      rgba(0, 255, 136, 0.12) 50%,
+      rgba(255, 255, 255, 0.03) 80%
+    ),
+    rgba(255, 255, 255, 0.03);
+  background-size: 220% 100%;
+  animation: shimmer 1.5s linear infinite;
+  border: 1px solid rgba(0, 255, 136, 0.05);
+}
+
+.emblemSkeleton {
+  width: 72px;
+  height: 72px;
+  border-radius: 1rem;
+}
+
+.tagSkeleton {
+  width: 92px;
+  height: 22px;
+  border-radius: 999px;
+}
+
+.nameSkeleton {
+  width: min(320px, 100%);
+  height: 30px;
+  border-radius: 0.6rem;
+}
+
+.metaSkeleton {
+  width: 120px;
+  height: 16px;
+  border-radius: 999px;
+}
+
+.statusSkeleton {
+  width: 170px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.mottoSkeleton {
+  width: min(520px, 100%);
+  height: 18px;
+  border-radius: 999px;
+}
+
+.wgBtnSkeleton {
+  display: none;
+  width: 150px;
+  height: 44px;
+  border-radius: 0.75rem;
+}
+
+.sectionTitleSkeleton {
+  width: 180px;
+  height: 22px;
+  border-radius: 0.5rem;
+}
+
+.pillLabelSkeleton {
+  width: 90px;
+  height: 13px;
+  border-radius: 999px;
+}
+
+.pillValueSkeleton {
+  width: 110px;
+  height: 26px;
+  border-radius: 0.55rem;
+}
+
+.pillFooterSkeleton {
+  width: 70px;
+  height: 14px;
+  border-radius: 999px;
+}
+
+.descriptionLine {
+  width: 100%;
+  height: 15px;
+  border-radius: 999px;
+  margin-bottom: 0.7rem;
+}
+
+.descriptionLine:last-child {
+  margin-bottom: 0;
+}
+
+.descriptionLineShort {
+  width: 62%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 220% 0;
+  }
+  100% {
+    background-position: -220% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblemSkeleton,
+  .tagSkeleton,
+  .nameSkeleton,
+  .metaSkeleton,
+  .statusSkeleton,
+  .mottoSkeleton,
+  .wgBtnSkeleton,
+  .sectionTitleSkeleton,
+  .pillLabelSkeleton,
+  .pillValueSkeleton,
+  .pillFooterSkeleton,
+  .descriptionLine {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+
+  .headerCard {
+    grid-template-columns: 80px minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .emblemSkeleton {
+    width: 80px;
+    height: 80px;
+  }
+
+  .wgBtnSkeleton {
+    display: block;
+  }
+
+  .nameRow {
+    align-items: center;
+    grid-template-columns: auto 1fr;
+  }
+
+  .pillsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section {
+    padding: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding-top: 1.75rem;
+  }
+
+  .headerCard {
+    padding: 1.4rem;
+  }
+
+  .tabContent {
+    gap: 1.25rem;
+  }
+}
