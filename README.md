@@ -1,4 +1,3 @@
-
 ```
 croc-website
 ├─ app
@@ -15,10 +14,6 @@ croc-website
 │  │  ├─ skill-icon
 │  │  │  └─ route.ts
 │  │  └─ wot
-│  │     ├─ player-profile
-│  │     │  └─ route.ts
-│  │     ├─ player-vehicles
-│  │     │  └─ route.ts
 │  │     └─ route.ts
 │  ├─ clan
 │  │  ├─ clan.module.css
@@ -52,15 +47,6 @@ croc-website
 │  ├─ not-found.tsx
 │  ├─ page.module.css
 │  ├─ page.tsx
-│  ├─ player
-│  │  ├─ page.tsx
-│  │  └─ [nickname]
-│  │     ├─ page.tsx
-│  │     └─ _components
-│  │        ├─ PlayerOverviewTab.tsx
-│  │        ├─ PlayerSearchForm.tsx
-│  │        ├─ PlayerTabs.tsx
-│  │        └─ PlayerVehiclesTab.tsx
 │  └─ tanks
 │     ├─ page.tsx
 │     ├─ TankCard.tsx
@@ -101,14 +87,12 @@ croc-website
 ├─ README.md
 ├─ services
 │  ├─ clanService.ts
-│  ├─ wn8Service.ts
 │  └─ wotService.ts
 ├─ tsconfig.json
 └─ types
    ├─ clan.ts
    ├─ crewBuild.ts
    ├─ mod.ts
-   ├─ wn8.ts
    └─ wot.ts
 
 ```
