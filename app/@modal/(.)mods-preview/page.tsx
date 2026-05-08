@@ -37,7 +37,7 @@ export default function ModsPreviewModal() {
         <div className={styles.modalHeader}>
           <div>
             <h1 id="mods-modal-title" className={styles.modalTitle}>
-              🎮 Моди для World of Tanks
+              🎮 World of Tanks Mods
             </h1>
           </div>
 
@@ -45,7 +45,7 @@ export default function ModsPreviewModal() {
             type="button"
             className={styles.closeBtn}
             onClick={() => router.back()}
-            aria-label="Закрыть"
+            aria-label="Close"
           >
             ✕
           </button>
@@ -71,11 +71,11 @@ export default function ModsPreviewModal() {
                     rel="noopener noreferrer"
                     className={styles.downloadBtn}
                   >
-                    📥 Завантажити
+                    📥 Download
                   </a>
 
                   <Link href={`/mods/${mod.id}`} className={styles.backBtn}>
-                    Детальніше
+                    Details
                   </Link>
                 </div>
               </div>
@@ -85,15 +85,15 @@ export default function ModsPreviewModal() {
           <div className={styles.disclaimer}>
             <span className={styles.disclaimerIcon}>⚠️</span>
             <p className={styles.disclaimerText}>
-              Всі моди взяті з відкритих джерел. Ми не є розробниками цих модів
-              і не несемо відповідальності за їх роботу. Встановлюйте моди на
-              власний ризик!
+              All mods are sourced from open sources. We are not the developers
+              of these mods and are not responsible for their functionality.
+              Install mods at your own risk!
             </p>
           </div>
 
           <div className={styles.detailsBottom}>
             <Link href="/mods" className={styles.backBtn}>
-              Відкрити всі моди як сторінку
+              Open all mods as a page
             </Link>
           </div>
         </div>

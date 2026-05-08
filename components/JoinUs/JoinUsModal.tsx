@@ -24,9 +24,9 @@ type JoinUsModalProps = {
 
 const validationSchema = Yup.object({
   nickname: Yup.string()
-    .min(3, "Минимум 3 символа")
-    .max(24, "Максимум 24 символа")
-    .required("Введи никнейм"),
+    .min(3, "Minimum 3 characters")
+    .max(24, "Maximum 24 characters")
+    .required("Enter your nickname"),
 });
 
 export default function JoinUsModal({ onClose }: JoinUsModalProps) {
@@ -62,12 +62,12 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
       try {
         const result = await searchPlayer(values.nickname.trim());
         if (result.length === 0) {
-          setSearchError("Игрок не найден. Проверь никнейм.");
+          setSearchError("Player not found. Check your nickname.");
         } else {
           setPlayers(result);
         }
       } catch {
-        setSearchError("Ошибка при поиске. Попробуй позже.");
+        setSearchError("Search error. Try again later.");
       } finally {
         setSubmitting(false);
       }
@@ -97,7 +97,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
       setTanks10(tier10.map((t) => ({ ...t, selected: false })));
       setTanks8(tier8.map((t) => ({ ...t, selected: false })));
     } catch {
-      setSearchError("Ошибка загрузки профиля. Попробуй позже.");
+      setSearchError("Error loading profile. Try again later.");
     } finally {
       setLoadingProfile(false);
     }
@@ -153,18 +153,18 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
       });
 
       if (res.status === 429) {
-        setSearchError("Лимит заявок: максимум 3 в день. Попробуй завтра.");
+        setSearchError("Application limit: max 3 per day. Try again tomorrow.");
         return;
       }
 
       if (!res.ok) {
-        setSearchError("Ошибка отправки заявки. Попробуй позже.");
+        setSearchError("Error sending application. Try again later.");
         return;
       }
 
       setSent(true);
     } catch {
-      setSearchError("Ошибка отправки заявки. Попробуй позже.");
+      setSearchError("Error sending application. Try again later.");
     } finally {
       setSending(false);
     }
@@ -183,23 +183,23 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
-        aria-label="Вступить в CR0C"
+        aria-label="Join CR0C"
       >
         <div className={styles.modalHeader}>
           <h2 className={styles.modalTitle}>
-            Вступить в CR<span className={styles.zero}>0</span>C
+            Join CR<span className={styles.zero}>0</span>C
           </h2>
           <button
             className={styles.closeBtn}
             onClick={handleClose}
-            aria-label="Закрыть"
+            aria-label="Close"
           >
             ✕
           </button>
         </div>
 
         <p className={styles.modalDesc}>
-          Введи свой никнейм в World of Tanks — мы проверим твои stats.
+          Enter your World of Tanks nickname — we&apos;ll check your stats.
         </p>
 
         <form className={styles.form} onSubmit={formik.handleSubmit}>
@@ -212,7 +212,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
               }`}
               type="text"
               name="nickname"
-              placeholder="Твой никнейм..."
+              placeholder="Your nickname..."
               value={formik.values.nickname}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -229,7 +229,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
             type="submit"
             disabled={formik.isSubmitting}
           >
-            {formik.isSubmitting ? "Поиск..." : "Найти"}
+            {formik.isSubmitting ? "Searching..." : "Search"}
           </button>
         </form>
 
@@ -237,7 +237,8 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
 
         {players.length > 0 && (
           <div className={styles.results}>
-            <p className={styles.resultsLabel}>Выбери аккаунт:</p>
+            <p className={styles.resultsLabel}>Select account:</p>
+
             {players.map((player) => (
               <button
                 key={player.account_id}
@@ -254,7 +255,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
         {loadingProfile && (
           <div className={styles.loading}>
             <span className={styles.spinner} />
-            Загружаем профиль...
+            Loading profile...
           </div>
         )}
 
@@ -264,8 +265,8 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
 
             <div className={styles.statsTable}>
               <div className={styles.statRow}>
-                <span className={styles.statLabel}>Процент побед</span>
-                <span className={styles.statMin}>мин. {MIN_WINRATE}%</span>
+                <span className={styles.statLabel}>Win rate</span>
+                <span className={styles.statMin}>min {MIN_WINRATE}%</span>
                 <span
                   className={`${styles.statValue} ${isWinRateOk ? styles.statOk : styles.statFail}`}
                 >
@@ -273,9 +274,9 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
                 </span>
               </div>
               <div className={styles.statRow}>
-                <span className={styles.statLabel}>Количество боёв</span>
+                <span className={styles.statLabel}>Battles</span>
                 <span className={styles.statMin}>
-                  мин. {MIN_BATTLES.toLocaleString()}
+                  min {MIN_BATTLES.toLocaleString()}
                 </span>
                 <span
                   className={`${styles.statValue} ${isBattlesOk ? styles.statOk : styles.statFail}`}
@@ -286,9 +287,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
             </div>
 
             <div className={styles.tanksSection}>
-              <p className={styles.tanksLabel}>
-                Отметь технику которая у тебя есть:
-              </p>
+              <p className={styles.tanksLabel}>Select the vehicles you own:</p>
 
               <div className={styles.tierTabs}>
                 <button
@@ -296,7 +295,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
                   className={`${styles.tierTab} ${activeTier === 10 ? styles.tierTabActive : ""}`}
                   onClick={() => setActiveTier(10)}
                 >
-                  X уровень
+                  Tier X
                   <span className={styles.tierCount}>{tanks10.length}</span>
                 </button>
                 <button
@@ -304,7 +303,7 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
                   className={`${styles.tierTab} ${activeTier === 8 ? styles.tierTabActive : ""}`}
                   onClick={() => setActiveTier(8)}
                 >
-                  VIII уровень
+                  Tier VIII
                   <span className={styles.tierCount}>{tanks8.length}</span>
                 </button>
               </div>
@@ -336,14 +335,14 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
                 </div>
               ) : (
                 <p className={styles.noTanks}>
-                  Нет танков {activeTier === 10 ? "X" : "VIII"} уровня
+                  No Tier {activeTier === 10 ? "X" : "VIII"} vehicles
                 </p>
               )}
             </div>
 
             {sent ? (
               <div className={styles.sentMsg}>
-                ✅ Заявка отправлена! Ожидай ответа в Discord.
+                ✅ Application sent! Wait for a reply in Discord.
               </div>
             ) : (
               <button
@@ -353,18 +352,18 @@ export default function JoinUsModal({ onClose }: JoinUsModalProps) {
                 title={
                   !canApply
                     ? selectedCount === 0
-                      ? "Выбери хотя бы один танк"
-                      : "Не соответствуешь требованиям"
+                      ? "Select at least one vehicle"
+                      : "You don't meet the requirements"
                     : ""
                 }
               >
                 {sending
-                  ? "Отправляем..."
+                  ? "Sending..."
                   : !isWinRateOk || !isBattlesOk
-                    ? "Не соответствуешь требованиям"
+                    ? "You don't meet the requirements"
                     : selectedCount === 0
-                      ? "Выбери хотя бы один танк"
-                      : "Отправить заявку"}
+                      ? "Select at least one vehicle"
+                      : "Send application"}
               </button>
             )}
           </div>

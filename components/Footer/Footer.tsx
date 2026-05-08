@@ -17,13 +17,13 @@ export default function Footer() {
 
         <nav className={styles.nav} aria-label="Footer navigation">
           <Link href="/" className={styles.link}>
-            Главная
+            Home
           </Link>
           <Link href="/news" className={styles.link}>
-            Новости
+            News
           </Link>
           <Link href="/mods" className={styles.link}>
-            Моды
+            Mods
           </Link>
         </nav>
 

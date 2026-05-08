@@ -15,7 +15,7 @@ export default function JoinUs() {
   return (
     <>
       <button className={styles.trigger} onClick={() => setIsOpen(true)}>
-        Вступить в клан
+        Join the clan
       </button>
 
       {isOpen && <JoinUsModal onClose={() => setIsOpen(false)} />}

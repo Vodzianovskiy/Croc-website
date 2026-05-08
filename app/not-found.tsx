@@ -23,16 +23,16 @@ export default function NotFound() {
       <div className={styles.glitch} data-text="404">
         404
       </div>
-      <h1 className={styles.title}>Страница не найдена</h1>
+      <h1 className={styles.title}>Page not found</h1>
       <p className={styles.desc}>
-        Этот сектор не существует или был уничтожен.
+        This sector does not exist or has been destroyed.
       </p>
       <p className={styles.countdown}>
-        Возврат на базу через <span className={styles.countNum}>{count}</span>
+        Returning to base in <span className={styles.countNum}>{count}</span>
         ...
       </p>
       <Link href="/" className={styles.btn}>
-        ← Вернуться на базу
+        ← Return to base
       </Link>
     </div>
   );

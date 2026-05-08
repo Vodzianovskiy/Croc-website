@@ -190,13 +190,13 @@ export default function ClanPlayersTab({ members }: ClanPlayersTabProps) {
     <section className={styles.section}>
       <div className={styles.sectionHeader}>
         <div className={styles.sectionAccentBar} />
-        <span className={styles.sectionTitle}>👥 Игроки</span>
+        <span className={styles.sectionTitle}>👥 Players</span>
       </div>
 
       {sortedMembers.length === 0 ? (
         <div className={styles.descriptionCard}>
           <p className={styles.descriptionText}>
-            В клане пока нет игроков или данные недоступны.
+            No players in the clan yet or data is unavailable.
           </p>
         </div>
       ) : (
@@ -204,22 +204,23 @@ export default function ClanPlayersTab({ members }: ClanPlayersTabProps) {
           {isCurrentPageLoading ? (
             <div className={styles.playersLoadingNote}>
               <span className={styles.playersLoadingDot} />
-              <span>Загружаем текущую страницу игроков...</span>
+              <span>Loading current page of players...</span>
             </div>
           ) : null}
 
           {!isCurrentPageLoading && isPrefetchingNextPage ? (
             <div className={styles.playersLoadingNote}>
               <span className={styles.playersLoadingDot} />
-              <span>Подготавливаем следующую страницу...</span>
+              <span>Preparing next page...</span>
             </div>
           ) : null}
 
           <div className={styles.playersTable}>
             <div className={styles.playersHead}>
-              <span>Никнейм</span>
-              <span>Роль</span>
-              <span className={styles.playersHeadRight}>Клановые бои</span>
+              <span>Nickname</span>
+              <span>Role</span>
+              <span className={styles.playersHeadRight}>Clan Battles</span>
+
               <span className={styles.playersHeadRight}>WN8</span>
             </div>
 

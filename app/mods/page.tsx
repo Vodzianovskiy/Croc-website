@@ -40,9 +40,9 @@ export default function ModsPage() {
     <main className={styles.page}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <h1 className={styles.title}>🎮 Моды для World of Tanks</h1>
+          <h1 className={styles.title}>🎮 World of Tanks Mods</h1>
           <p className={styles.subtitle}>
-            Подборка популярных модпаков и полезных сборок для игры
+            A curated selection of popular mod packs and useful builds
           </p>
         </header>
 
@@ -55,9 +55,9 @@ export default function ModsPage() {
         <div className={styles.disclaimer}>
           <span className={styles.disclaimerIcon}>⚠️</span>
           <p className={styles.disclaimerText}>
-            Все моды взяты из открытых источников. Мы не являемся разработчиками
-            этих модов и не несем ответственности за их работу. Устанавливайте
-            моды на свой риск.
+            All mods are sourced from open sources. We are not the developers of
+            these mods and are not responsible for their functionality. Install
+            mods at your own risk.
           </p>
         </div>
       </div>

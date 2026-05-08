@@ -48,7 +48,7 @@ export function TankModal({
           <button
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Закрыть"
+            aria-label="Close"
           >
             ✕
           </button>

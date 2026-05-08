@@ -28,7 +28,7 @@ export default function ClanTabs({
           }`}
           onClick={() => setActiveTab("overview")}
         >
-          🏆 Обзор
+          🏆 Overview
         </button>
 
         <button
@@ -38,7 +38,7 @@ export default function ClanTabs({
           }`}
           onClick={() => setActiveTab("players")}
         >
-          👥 Игроки
+          👥 Players
         </button>
 
         <button
@@ -48,7 +48,7 @@ export default function ClanTabs({
           }`}
           onClick={() => setActiveTab("stronghold")}
         >
-          🏰 Укрепрайон
+          🏰 Stronghold
         </button>
       </div>
 

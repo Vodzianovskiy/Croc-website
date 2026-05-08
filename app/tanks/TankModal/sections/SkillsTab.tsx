@@ -11,11 +11,11 @@ interface Props {
 }
 
 const ROLE_LABELS: Record<string, string> = {
-  commander: "Командир",
-  gunner: "Наводчик",
-  driver: "Механик-водитель",
-  loader: "Заряжающий",
-  radioman: "Радист",
+  commander: "Commander",
+  gunner: "Gunner",
+  driver: "Driver",
+  loader: "Loader",
+  radioman: "Radioman",
 };
 
 export function SkillsSection({
@@ -30,10 +30,10 @@ export function SkillsSection({
   if (roles.length === 0) {
     return (
       <div className={styles.section}>
-        <span className={styles.sectionLabel}>Перки экипажа</span>
+        <span className={styles.sectionLabel}>Crew skills</span>
         <div className={styles.wip}>
           <span className={styles.wipIcon}>🚧</span>
-          <span className={styles.wipText}>В скором времени добавим</span>
+          <span className={styles.wipText}>Coming soon</span>
         </div>
       </div>
     );
@@ -41,7 +41,8 @@ export function SkillsSection({
 
   return (
     <div className={styles.section}>
-      <span className={styles.sectionLabel}>Перки экипажа</span>
+      <span className={styles.sectionLabel}>Crew skills</span>
+
       <div className={styles.crewList}>
         {roles.map((role, index) => {
           const roleCountBefore = roles
@@ -57,7 +58,7 @@ export function SkillsSection({
           const uniqueKey = `${role}-${roleCountBefore}`;
           const roleLabel =
             role === "loader" && roleCountBefore > 0
-              ? "Заряжающий 2"
+              ? "Loader 2"
               : (ROLE_LABELS[role] ?? role);
 
           return (
@@ -84,7 +85,7 @@ export function SkillsSection({
               ) : (
                 <div className={styles.wip}>
                   <span className={styles.wipIcon}>🚧</span>
-                  <span className={styles.wipText}>скоро</span>
+                  <span className={styles.wipText}>soon</span>
                 </div>
               )}
             </div>

@@ -40,7 +40,7 @@ export default function ModModalContent({ id }: Props) {
             type="button"
             className={styles.closeBtn}
             onClick={() => router.back()}
-            aria-label="Закрыть"
+            aria-label="Close"
           >
             ✕
           </button>
@@ -48,7 +48,8 @@ export default function ModModalContent({ id }: Props) {
 
         <div className={styles.modalBody}>
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>Рейтинг</span>
+            <span className={styles.sectionLabel}>Rating</span>
+
             <div className={styles.wip}>
               <span className={styles.wipIcon}>⭐</span>
               <span className={styles.wipText}>{mod.rating} / 10</span>
@@ -57,13 +58,14 @@ export default function ModModalContent({ id }: Props) {
 
           {mod.description ? (
             <div className={styles.section}>
-              <span className={styles.sectionLabel}>Описание</span>
+              <span className={styles.sectionLabel}>Description</span>
+
               <p className={styles.detailsDescription}>{mod.description}</p>
             </div>
           ) : null}
 
           <div className={styles.section}>
-            <span className={styles.sectionLabel}>Действия</span>
+            <span className={styles.sectionLabel}>Actions</span>
 
             <div className={styles.detailsActions}>
               <a
@@ -72,7 +74,7 @@ export default function ModModalContent({ id }: Props) {
                 rel="noopener noreferrer"
                 className={styles.downloadBtn}
               >
-                📥 Завантажити
+                📥 Download
               </a>
             </div>
           </div>
@@ -80,14 +82,13 @@ export default function ModModalContent({ id }: Props) {
           <div className={styles.disclaimer}>
             <span className={styles.disclaimerIcon}>⚠️</span>
             <p className={styles.disclaimerText}>
-              Все моды взяты из открытых источников. Устанавливайте на свой
-              риск.
+              All mods are sourced from open sources. Install at your own risk.
             </p>
           </div>
 
           <div className={styles.detailsBottom}>
             <Link href="/mods" className={styles.backBtn}>
-              ← Назад до всіх модів
+              ← Back to all mods
             </Link>
           </div>
         </div>

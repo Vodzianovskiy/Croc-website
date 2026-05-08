@@ -42,7 +42,7 @@ function StrongholdTierCard({
     <div className={styles.tierCard}>
       <div className={styles.tierHeader}>
         <span className={styles.tierTitle}>{tierLabel}</span>
-        <span className={styles.tierSubLabel}>Всего боёв</span>
+        <span className={styles.tierSubLabel}>Total Battles</span>
       </div>
 
       <span className={styles.tierBattles}>{total}</span>
@@ -69,18 +69,20 @@ function StrongholdTierCard({
 
       <div className={styles.tierStatsRow}>
         <div className={`${styles.tierMini} ${styles.tierMiniWins}`}>
-          <div className={styles.tierMiniLabel}>Победы</div>
+          <div className={styles.tierMiniLabel}>Wins</div>
+
           <div className={styles.tierMiniValue}>{wins}</div>
         </div>
 
         <div className={`${styles.tierMini} ${styles.tierMiniLoses}`}>
-          <div className={styles.tierMiniLabel}>Поражения</div>
+          <div className={styles.tierMiniLabel}>Losses</div>
+
           <div className={styles.tierMiniValue}>{loses}</div>
         </div>
       </div>
 
       <div className={styles.tierLastBattle}>
-        Последний бой: {formatDateShort(lastTime)}
+        Last battle: {formatDateShort(lastTime)}
       </div>
     </div>
   );
@@ -120,12 +122,12 @@ export default function ClanStrongholdTab({
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <div className={styles.sectionAccentBar} />
-          <span className={styles.sectionTitle}>🏰 Укрепрайон</span>
+          <span className={styles.sectionTitle}>🏰 Stronghold</span>
         </div>
 
         <div className={styles.descriptionCard}>
           <p className={styles.descriptionText}>
-            Данные по укрепрайону отсутствуют.
+            Stronghold data is not available.
           </p>
         </div>
       </section>
@@ -139,28 +141,28 @@ export default function ClanStrongholdTab({
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <div className={styles.sectionAccentBar} />
-          <span className={styles.sectionTitle}>🏰 Укрепрайон</span>
+          <span className={styles.sectionTitle}>🏰 Stronghold</span>
         </div>
 
         <div className={styles.strongholdPills}>
           <div className={styles.ratingPill}>
-            <span className={styles.ratingPillLabel}>Уровень укрепа</span>
+            <span className={styles.ratingPillLabel}>Stronghold Level</span>
+
             <span className={styles.ratingPillValue}>
               LVL {stronghold.stronghold_level}
             </span>
           </div>
 
           <div className={styles.ratingPill}>
-            <span className={styles.ratingPillLabel}>Фин. резерв</span>
+            <span className={styles.ratingPillLabel}>Financial Reserve</span>
+
             <span className={styles.ratingPillValue}>
               {financial ? `Lvl ${financial.building_level}` : "—"}
             </span>
           </div>
 
           <div className={styles.ratingPill}>
-            <span className={styles.ratingPillLabel}>
-              Резерв на свободный опыт
-            </span>
+            <span className={styles.ratingPillLabel}>Free XP Reserve</span>
             <span className={styles.ratingPillValue}>
               {freeXp ? `Lvl ${freeXp.building_level}` : "—"}
             </span>
@@ -171,12 +173,12 @@ export default function ClanStrongholdTab({
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
           <div className={styles.sectionAccentBar} />
-          <span className={styles.sectionTitle}>⚔️ Вылазки по уровням</span>
+          <span className={styles.sectionTitle}>⚔️ Skirmishes by Tier</span>
         </div>
 
         <div className={styles.tierGrid}>
           <StrongholdTierCard
-            tierLabel="VI уровень"
+            tierLabel="Tier VI"
             total={stronghold.skirmish_statistics.total_6}
             wins={stronghold.skirmish_statistics.win_6}
             loses={stronghold.skirmish_statistics.lose_6}
@@ -184,7 +186,7 @@ export default function ClanStrongholdTab({
           />
 
           <StrongholdTierCard
-            tierLabel="VIII уровень"
+            tierLabel="Tier VIII"
             total={stronghold.skirmish_statistics.total_8}
             wins={stronghold.skirmish_statistics.win_8}
             loses={stronghold.skirmish_statistics.lose_8}
@@ -192,7 +194,7 @@ export default function ClanStrongholdTab({
           />
 
           <StrongholdTierCard
-            tierLabel="X уровень"
+            tierLabel="Tier X"
             total={stronghold.skirmish_statistics.total_10}
             wins={stronghold.skirmish_statistics.win_10}
             loses={stronghold.skirmish_statistics.lose_10}

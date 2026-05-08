@@ -49,7 +49,7 @@ export default function ClanOverviewTab({
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionAccentBar} />
-              <span className={styles.sectionTitle}>🗺 Глобальная карта</span>
+              <span className={styles.sectionTitle}>🗺 Global Map</span>
             </div>
 
             <div className={styles.pillsGrid}>
@@ -74,9 +74,7 @@ export default function ClanOverviewTab({
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionAccentBar} />
-              <span className={styles.sectionTitle}>
-                ⚔️ Вылазки / Укрепрайон
-              </span>
+              <span className={styles.sectionTitle}>⚔️ Stronghold</span>
             </div>
 
             <div className={styles.pillsGrid}>
@@ -101,12 +99,12 @@ export default function ClanOverviewTab({
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <div className={styles.sectionAccentBar} />
-              <span className={styles.sectionTitle}>📊 Общая статистика</span>
+              <span className={styles.sectionTitle}>📊 Overall Statistics</span>
             </div>
 
             <div className={styles.pillsGrid}>
               <RatingPill
-                label="% побед"
+                label="Win Rate"
                 value={
                   rating.wins_ratio_avg?.value !== undefined
                     ? `${rating.wins_ratio_avg.value.toFixed(2)}%`
@@ -115,12 +113,12 @@ export default function ClanOverviewTab({
                 field={rating.wins_ratio_avg}
               />
               <RatingPill
-                label="Эффективность"
+                label="Efficiency"
                 value={rating.efficiency?.value?.toFixed(0) ?? "—"}
                 field={rating.efficiency}
               />
               <RatingPill
-                label="Сред. боёв"
+                label="Avg. Battles"
                 value={rating.battles_count_avg?.value?.toFixed(0) ?? "—"}
                 field={rating.battles_count_avg}
               />
@@ -133,7 +131,7 @@ export default function ClanOverviewTab({
         <section className={styles.section}>
           <div className={styles.sectionHeader}>
             <div className={styles.sectionAccentBar} />
-            <span className={styles.sectionTitle}>Описание клана</span>
+            <span className={styles.sectionTitle}>Clan Description</span>
           </div>
 
           <div className={styles.descriptionCard}>

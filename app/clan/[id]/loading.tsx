@@ -7,7 +7,7 @@ export default function ClanDetailLoading() {
         <div className={styles.cardHeaderRow}>
           <div className={styles.backChip}>
             <span className={styles.backArrow}>←</span>
-            <span>Загрузка клана...</span>
+            <span>Loading clan...</span>
           </div>
         </div>
 
@@ -37,10 +37,11 @@ export default function ClanDetailLoading() {
 
         <div className={styles.tabs}>
           <div className={`${styles.tabButton} ${styles.tabButtonActive}`}>
-            🏆 Обзор
+            🏆 Overview
           </div>
-          <div className={styles.tabButton}>👥 Игроки</div>
-          <div className={styles.tabButton}>🏰 Укрепрайон</div>
+          <div className={styles.tabButton}>👥 Players</div>
+
+          <div className={styles.tabButton}>🏰 Stronghold</div>
         </div>
 
         <div className={styles.tabContent}>
@@ -88,7 +89,7 @@ export default function ClanDetailLoading() {
         </div>
 
         <p className={styles.loadingText}>
-          Подожди немного, загружаем данные из WG API...
+          Hang tight, loading data from WG API...
         </p>
       </div>
     </div>

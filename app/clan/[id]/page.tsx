@@ -121,7 +121,7 @@ export default async function ClanDetailPage({ params }: Props) {
       <div className={styles.pageInner}>
         <div className={styles.cardHeaderRow}>
           <Link href="/clan" className={styles.backChip}>
-            ← Назад к списку
+            ← Back to list
           </Link>
         </div>
 
@@ -148,7 +148,8 @@ export default async function ClanDetailPage({ params }: Props) {
             <div className={styles.metaRow}>
               <span>👑 {clan.leader_name}</span>
               <span className={styles.metaSep} />
-              <span>👥 {clan.members_count} игроков</span>
+              <span>👥 {clan.members_count} members</span>
+
               <span className={styles.metaSep} />
               <span>📅 {formatDate(clan.created_at)}</span>
             </div>
@@ -162,8 +163,8 @@ export default async function ClanDetailPage({ params }: Props) {
                 }`}
               >
                 {clan.accepts_join_requests
-                  ? "✅ Набор открыт"
-                  : "🔒 Набор закрыт"}
+                  ? "✅ Recruitment open"
+                  : "🔒 Recruitment closed"}
               </span>
             </div>
 
@@ -178,7 +179,7 @@ export default async function ClanDetailPage({ params }: Props) {
             rel="noopener noreferrer"
             className={styles.wgBtnTop}
           >
-            🌐 Профиль WG
+            🌐 WG Profile
           </a>
         </div>
 

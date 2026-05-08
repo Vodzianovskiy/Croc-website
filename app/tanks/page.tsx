@@ -54,12 +54,12 @@ export default async function TanksPage() {
       <div className={styles.container}>
         <div className={styles.header}>
           <Link href="/" className={styles.back}>
-            ← Назад
+            ← Back
           </Link>
           <div className={styles.titleBlock}>
-            <h1 className={styles.title}>Техника клана</h1>
+            <h1 className={styles.title}>Clan vehicles</h1>
             <p className={styles.sub}>
-              Вся техника на которой играет CR
+              All vehicles played by CR
               <span className={styles.zero}>0</span>C
             </p>
           </div>

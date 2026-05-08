@@ -9,7 +9,8 @@ interface Props {
 export function ConsumablesSection({ consumables }: Props) {
   return (
     <div className={styles.section}>
-      <span className={styles.sectionLabel}>Расходники</span>
+      <span className={styles.sectionLabel}>Consumables</span>
+
       {consumables.length > 0 ? (
         <div className={styles.slotGroup}>
           {consumables.map((cons, i) => (
@@ -39,7 +40,7 @@ function Wip() {
   return (
     <div className={styles.wip}>
       <span className={styles.wipIcon}>🚧</span>
-      <span className={styles.wipText}>В скором времени добавим</span>
+      <span className={styles.wipText}>Coming soon</span>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function ModCard({ mod }: Props) {
           rel="noopener noreferrer"
           className={styles.downloadBtn}
         >
-          📥 Завантажити
+          📥 Download
         </a>
       </div>
     </article>

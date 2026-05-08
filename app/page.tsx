@@ -49,7 +49,7 @@ export default async function Home() {
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          {/* Левая часть */}
+          {/* Left side */}
           <div className={styles.heroContent}>
             <span className={styles.tag}>🌍 European Clan · WoT</span>
 
@@ -58,20 +58,20 @@ export default async function Home() {
             </h1>
 
             <p className={styles.heroSub}>
-              Мы не просто клан — мы команда. Дисциплина, тактика и победы на
-              всех фронтах. Глобальная карта, турниры, маневры — каждый бой с
-              нами.
+              We&apos;re not just a clan — we&apos;re a team. Discipline,
+              tactics, and victories on all fronts. Global Map, tournaments,
+              Maneuvers — every battle with us.
             </p>
 
             <div className={styles.heroBtns}>
               <Link href="/mods-preview" className={styles.modsBtn}>
-                📥 Скачать моды
+                📥 Download mods
               </Link>
 
               <JoinUs />
 
               <a
-                href="https://discord.gg/ВАШ_ЛИНК"
+                href="https://discord.gg/TrSrudNUXt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.discordBtn}
@@ -81,20 +81,20 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Правая часть */}
+          {/* Right side */}
           <div className={styles.heroImageWrap}>
             <HeroCroc />
           </div>
         </div>
 
-        {/* Статы клана */}
+        {/* Clan stats */}
         <div className={styles.heroStats}>
           {[
-            { num: "100+", label: "Игроков" },
-            { num: "3×", label: "в неделю" },
-            { num: "X лвл", label: "Техника" },
-            { num: "ГК", label: "Глобальная карта" },
-            { num: "⚔️", label: "Маневры" },
+            { num: "100+", label: "Players" },
+            { num: "3×", label: "Sessions per week" },
+            { num: "X lvl", label: "Vehicles" },
+            { num: "GM", label: "Global Map" },
+            { num: "⚔️", label: "Maneuvers" },
           ].map(({ num, label }, i, arr) => (
             <Fragment key={label}>
               <div className={styles.heroStat}>
@@ -112,37 +112,38 @@ export default async function Home() {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.grid}>
-            {/* О КЛАНЕ */}
+            {/* ABOUT */}
             <div className={styles.aboutBlock}>
-              <h2 className={styles.sectionTitle}>О клане</h2>
+              <h2 className={styles.sectionTitle}>About the clan</h2>
 
               <p className={styles.text}>
-                CR0C — европейский клан с сильным командным духом. Мы объединяем
-                игроков, которые хотят не просто играть, а побеждать. У нас нет
-                случайных людей — только те, кто готов работать в команде и
-                расти вместе.
+                CR0C is a European clan with a strong team spirit. We bring
+                together players who don&apos;t just want to play — they want to
+                win. We have no randoms — only those ready to work as a team and
+                grow together.
               </p>
 
               <p className={styles.text}>
-                Мы активно участвуем в маневрах и битвах Глобальной карты,
-                выступаем на турнирах и постоянно совершенствуем нашу тактику.
-                Каждый бой — это опыт, каждая победа — общая заслуга.
+                We actively participate in Maneuvers and Global Map battles,
+                compete in tournaments, and constantly improve our tactics.
+                Every battle is experience, every victory is a shared
+                achievement.
               </p>
 
               <p className={styles.text}>
-                В нашем Discord всегда живо: обсуждаем тактики, разбираем бои,
-                помогаем друг другу прокачиваться и просто хорошо проводим
-                время. Мы не бросаем своих.
+                Our Discord is always lively: we discuss tactics, analyze
+                battles, help each other improve, and just have a good time. We
+                don&apos;t abandon our own.
               </p>
 
               <div className={styles.features}>
                 {[
-                  { icon: "⚔️", label: "Маневры & ГК" },
-                  { icon: "🏆", label: "Турниры" },
-                  { icon: "🎙️", label: "Общение в Discord" },
-                  { icon: "🤝", label: "Помогаем друг другу" },
-                  { icon: "📅", label: "Играем 3 раза в неделю" },
-                  { icon: "🌍", label: "Европейский клан" },
+                  { icon: "⚔️", label: "Maneuvers & GM" },
+                  { icon: "🏆", label: "Tournaments" },
+                  { icon: "💬", label: "Discord chat" },
+                  { icon: "🤝", label: "Helping each other" },
+                  { icon: "📅", label: "Play 3 times a week" },
+                  { icon: "🌍", label: "European clan" },
                 ].map(({ icon, label }) => (
                   <div key={label} className={styles.feature}>
                     <span className={styles.featureIcon}>{icon}</span>
@@ -152,13 +153,13 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* ТАНКИ С БЕКА */}
+            {/* TANKS */}
             <div className={styles.tanksBlock}>
               <div className={styles.tanksTitleRow}>
-                <h2 className={styles.sectionTitle}>На чём играем</h2>
+                <h2 className={styles.sectionTitle}>What we play on</h2>
 
                 <Link href="/tanks" className={styles.seeAllBtn}>
-                  Увидеть все →
+                  See all →
                 </Link>
               </div>
 

@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
 const navLinks = [
-  { href: "/", label: "Главная" },
-  { href: "/player", label: "Игрок" },
-  { href: "/mods", label: "Моды" },
-  { href: "/clan", label: "Кланы" },
+  { href: "/", label: "Home" },
+  { href: "/player", label: "Player" },
+  { href: "/mods", label: "Mods" },
+  { href: "/clan", label: "Clans" },
 ];
 
 function DiscordIcon({ size = 25 }: { size?: number }) {
@@ -124,7 +124,7 @@ export default function Header() {
           type="button"
           className={styles.burger}
           onClick={() => setIsOpen((prev) => !prev)}
-          aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >

@@ -59,7 +59,7 @@ export default function ClanSearchPage() {
         setResults(data);
         setSearched(true);
       } catch {
-        setError("❌ Ошибка подключения к API");
+        setError("❌ API connection error");
       }
     });
   };
@@ -72,21 +72,21 @@ export default function ClanSearchPage() {
   return (
     <div className={styles.searchPage}>
       <div className={styles.searchHero}>
-        <span className={styles.tag}>🐊 БАЗА ДАННЫХ</span>
+        <span className={styles.tag}>🐊 DATABASE</span>
 
         <h1 className={styles.searchTitle}>
-          ПОИСК <span className={styles.accent}>КЛАНА</span>
+          CLAN <span className={styles.accent}>SEARCH</span>
         </h1>
 
         <p className={styles.searchSub}>
-          Введи тег или название клана — получи полную статистику
+          Enter a clan tag or name — get full statistics
         </p>
 
         <div className={styles.searchBar}>
           <input
             className={styles.searchInput}
             type="text"
-            placeholder="Например: CR0C"
+            placeholder="e.g. CR0C"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -99,13 +99,13 @@ export default function ClanSearchPage() {
             onClick={handleSearch}
             disabled={isPending}
           >
-            {isPending ? <span className={styles.spinner} /> : "ПОИСК"}
+            {isPending ? <span className={styles.spinner} /> : "SEARCH"}
           </button>
         </div>
 
         {recentClans.length > 0 ? (
           <div className={styles.recentWrap}>
-            <span className={styles.recentTitle}>ПОСЛЕДНИЕ КЛАНЫ</span>
+            <span className={styles.recentTitle}>RECENT CLANS</span>
 
             <div className={styles.recentList}>
               {recentClans.map((clan) => (
@@ -128,7 +128,7 @@ export default function ClanSearchPage() {
       {searched ? (
         <div className={styles.resultsWrap}>
           {results.length === 0 ? (
-            <p className={styles.noResults}>😔 Кланы не найдены</p>
+            <p className={styles.noResults}>😔 No clans found</p>
           ) : (
             <div className={styles.resultsList}>
               {results.map((clan) => (
