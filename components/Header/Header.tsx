@@ -8,7 +8,6 @@ import { LINKS } from "@/config/links";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/player", label: "Player" },
   { href: "/mods", label: "Mods" },
   { href: "/clan", label: "Clans" },
 ];

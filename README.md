@@ -1,98 +1,134 @@
-```
-croc-website
-├─ app
-│  ├─ @modal
-│  │  ├─ (.)mods
-│  │  │  └─ [id]
-│  │  │     └─ page.tsx
-│  │  ├─ (.)mods-preview
-│  │  │  └─ page.tsx
-│  │  └─ default.tsx
-│  ├─ api
-│  │  ├─ discord
-│  │  │  └─ route.ts
-│  │  ├─ skill-icon
-│  │  │  └─ route.ts
-│  │  └─ wot
-│  │     └─ route.ts
-│  ├─ clan
-│  │  ├─ clan.module.css
-│  │  ├─ page.tsx
-│  │  └─ [id]
-│  │     ├─ clan-detail.module.css
-│  │     ├─ clan-loading.module.css
-│  │     ├─ loading.tsx
-│  │     ├─ page.tsx
-│  │     └─ _components
-│  │        ├─ clan-players-pagination.module.css
-│  │        ├─ clan-tabs.module.css
-│  │        ├─ ClanOverviewTab.tsx
-│  │        ├─ ClanPlayersPagination.tsx
-│  │        ├─ ClanPlayersTab.tsx
-│  │        ├─ ClanStrongholdTab.tsx
-│  │        └─ ClanTabs.tsx
-│  ├─ favicon.ico
-│  ├─ globals.css
-│  ├─ layout.tsx
-│  ├─ mods
-│  │  ├─ ModCard.tsx
-│  │  ├─ ModModalContent.tsx
-│  │  ├─ mods.module.css
-│  │  ├─ page.tsx
-│  │  └─ [id]
-│  │     └─ page.tsx
-│  ├─ mods-preview
-│  │  └─ page.tsx
-│  ├─ not-found.module.css
-│  ├─ not-found.tsx
-│  ├─ page.module.css
-│  ├─ page.tsx
-│  └─ tanks
-│     ├─ page.tsx
-│     ├─ TankCard.tsx
-│     ├─ TankModal
-│     │  ├─ sections
-│     │  │  ├─ ConsumablesTab.tsx
-│     │  │  ├─ EquipmentTab.tsx
-│     │  │  └─ SkillsTab.tsx
-│     │  ├─ TankModal.module.css
-│     │  └─ TankModal.tsx
-│     └─ tanks.module.css
-├─ components
-│  ├─ Footer
-│  │  ├─ Footer.module.css
-│  │  └─ Footer.tsx
-│  ├─ Header
-│  │  ├─ Header.module.css
-│  │  └─ Header.tsx
-│  ├─ HeroCroc
-│  │  ├─ HeroCroc.module.css
-│  │  ├─ HeroCroc.tsx
-│  │  └─ HeroCrocScene.tsx
-│  └─ JoinUs
-│     ├─ JoinUs.module.css
-│     ├─ JoinUs.tsx
-│     └─ JoinUsModal.tsx
-├─ config
-│  ├─ crewBuilds.ts
-│  ├─ mods.ts
-│  └─ tankEquipment.ts
-├─ eslint.config.mjs
-├─ next.config.ts
-├─ package-lock.json
-├─ package.json
-├─ public
-│  ├─ croc.jpg
-│  └─ croc_Animations.glb
-├─ README.md
-├─ services
-│  ├─ clanService.ts
-│  └─ wotService.ts
-├─ tsconfig.json
-└─ types
-   ├─ clan.ts
-   ├─ crewBuild.ts
-   ├─ mod.ts
-   └─ wot.ts
+# 🐊 CR0C Clan Portal
+
+**CR0C Clan Portal** — это веб-сайт европейского клана **CR0C** по игре **World of Tanks**. Портал предоставляет полную информацию о клане, его участниках, используемой технике, модах, а также позволяет подавать заявки на вступление через Discord.
+
+---
+
+## 🚀 Функционал
+
+### 📊 Статистика клана
+
+- **Поиск кланов** — поиск по тегу или названию через Wargaming API
+- **Детальная страница клана** — информация о клане, рейтинг (GM ELO, FB ELO), список участников с пагинацией, данные об укрепрайоне (stronghold)
+- **Недавние поиски** — сохранение последних 5 просмотренных кланов в localStorage
+
+### 🎮 Техника клана
+
+- **Список танков** — все Tier X машины, на которых играет клан
+- **Детальный просмотр** — модальное окно с тремя вкладками:
+  - **Equipment** — снаряжение (доп. оборудование)
+  - **Consumables** — расходники (нация-специфичные пайки)
+  - **Skills** — перки экипажа (6 перков на каждую роль: командир, наводчик, мехвод, заряжающий, радист)
+
+### 🛠 Моды
+
+- **Список модпаков** — ПРОТанки EU, LeBwa Team с рейтингом и ссылками на скачивание
+- **Модальное окно** — детальное описание мода с кнопками установки
+
+### 📝 Вступление в клан
+
+- **Форма заявки** — поиск игрока по нику, проверка статистики (винрейт ≥ 48%, боёв ≥ 2500)
+- **Выбор техники** — отметка Tier X и Tier VIII танков, которые есть у игрока
+- **Отправка в Discord** — заявка отправляется в Discord-канал через вебхук с лимитом 3 заявки в день с одного IP
+
+### 🎨 3D-анимация
+
+- **Интерактивный крокодил** — 3D-модель на главной странице с анимациями (ходьба, бег, танцы, пробуждение), адаптивная под разрешение экрана
+
+---
+
+## 🧱 Технологии
+
+| Технология                                                    | Назначение                              |
+| ------------------------------------------------------------- | --------------------------------------- |
+| **Next.js 16** (App Router)                                   | Фреймворк, серверный рендеринг, роутинг |
+| **React 19**                                                  | UI-библиотека                           |
+| **TypeScript**                                                | Типизация                               |
+| **Three.js** + **@react-three/fiber** + **@react-three/drei** | 3D-графика (модель крокодила)           |
+| **@react-three/postprocessing** + **postprocessing**          | Пост-эффекты для 3D                     |
+| **Axios**                                                     | HTTP-запросы к Wargaming API            |
+| **Formik** + **Yup**                                          | Формы и валидация (заявка в клан)       |
+| **react-paginate**                                            | Пагинация списка игроков                |
+| **react-icons**                                               | Иконки (Discord и др.)                  |
+| **CSS Modules**                                               | Стилизация компонентов                  |
+
+---
+
+## 🏗 Архитектура
 
 ```
+croc-website/
+├── app/                    # Next.js App Router
+│   ├── api/                # API-роуты (прокси к WG API, Discord webhook, иконки скиллов)
+│   ├── clan/               # Поиск кланов + детальная страница клана
+│   ├── mods/               # Страница модов
+│   ├── mods-preview/       # Редирект на /mods
+│   ├── tanks/              # Техника клана с модальными окнами
+│   └── page.tsx            # Главная страница
+├── components/             # Переиспользуемые компоненты
+│   ├── Header/             # Шапка с навигацией и ссылкой на Discord
+│   ├── Footer/             # Подвал
+│   ├── HeroCroc/           # 3D-сцена с крокодилом
+│   └── JoinUs/             # Форма вступления в клан
+├── config/                 # Конфигурационные файлы
+│   ├── links.ts            # Централизованные ссылки (Discord и др.)
+│   ├── crewBuilds.ts       # Билды перков для каждого танка
+│   ├── mods.ts             # Список модов
+│   └── tankEquipment.ts    # Снаряжение и расходники для танков
+├── services/               # Сервисы для работы с API
+│   ├── clanService.ts      # Wargaming API (кланы, рейтинг, укрепрайон)
+│   └── wotService.ts       # Wargaming API (игроки, статистика, танки)
+├── types/                  # TypeScript-типы
+│   ├── clan.ts             # Типы для кланов
+│   ├── wot.ts              # Типы для WoT API
+│   ├── mod.ts              # Типы для модов
+│   └── crewBuild.ts        # Типы для билдов перков
+└── public/                 # Статические файлы
+    ├── croc.jpg            # OG-изображение
+    └── croc_Animations.glb # 3D-модель крокодила
+```
+
+---
+
+## 🔌 API-эндпоинты
+
+| Эндпоинт                        | Описание                                 |
+| ------------------------------- | ---------------------------------------- |
+| `GET /api/wot?endpoint=...`     | Прокси к Wargaming API (скрывает APP_ID) |
+| `POST /api/discord`             | Отправка заявки в Discord через вебхук   |
+| `GET /api/skill-icon?skill=...` | Прокси для иконок перков                 |
+
+---
+
+## ⚙️ Переменные окружения
+
+Создайте файл `.env.local` в корне проекта:
+
+```env
+WOT_APP_ID=your_wargaming_app_id
+DISCORD_WEBHOOK_URL=your_discord_webhook_url
+```
+
+---
+
+## 🛠 Запуск
+
+```bash
+# Установка зависимостей
+npm install
+
+# Режим разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
+
+# Запуск продакшен-сборки
+npm start
+```
+
+---
+
+## 📄 Лицензия
+
+Все права защищены. CR0C Clan © 2026.

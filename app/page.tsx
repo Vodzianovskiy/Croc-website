@@ -7,6 +7,7 @@ import HeroCroc from "../components/HeroCroc/HeroCroc";
 import { Fragment } from "react";
 import type { Metadata } from "next";
 import { LINKS } from "@/config/links";
+import ClanStatsClick from "../components/ClanStatsClick/ClanStatsClick";
 
 export const metadata: Metadata = {
   title: {
@@ -137,21 +138,7 @@ export default async function Home() {
                 don&apos;t abandon our own.
               </p>
 
-              <div className={styles.features}>
-                {[
-                  { icon: "⚔️", label: "Maneuvers & GM" },
-                  { icon: "🏆", label: "Tournaments" },
-                  { icon: "💬", label: "Discord chat" },
-                  { icon: "🤝", label: "Helping each other" },
-                  { icon: "📅", label: "Play 3 times a week" },
-                  { icon: "🌍", label: "European clan" },
-                ].map(({ icon, label }) => (
-                  <div key={label} className={styles.feature}>
-                    <span className={styles.featureIcon}>{icon}</span>
-                    <span className={styles.featureLabel}>{label}</span>
-                  </div>
-                ))}
-              </div>
+              <ClanStatsClick />
             </div>
 
             {/* TANKS */}

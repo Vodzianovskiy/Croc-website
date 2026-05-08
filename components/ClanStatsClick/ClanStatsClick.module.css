@@ -1,0 +1,45 @@
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 481px) {
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg-card);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-2px);
+  background: var(--bg-surface-2);
+}
+
+.feature:focus-visible {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}
+
+.featureIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.featureLabel {
+  font-size: 16px;
+  color: var(--text-primary);
+}
