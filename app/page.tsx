@@ -6,6 +6,7 @@ import Link from "next/link";
 import HeroCroc from "../components/HeroCroc/HeroCroc";
 import { Fragment } from "react";
 import type { Metadata } from "next";
+import { LINKS } from "@/config/links";
 
 export const metadata: Metadata = {
   title: {
@@ -71,7 +72,7 @@ export default async function Home() {
               <JoinUs />
 
               <a
-                href="https://discord.gg/TrSrudNUXt"
+                href={LINKS.discord}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.discordBtn}

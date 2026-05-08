@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
+import { LINKS } from "@/config/links";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -110,7 +111,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="https://discord.gg/TrSrudNUXt"
+          href={LINKS.discord}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.discord}
@@ -150,7 +151,7 @@ export default function Header() {
           ))}
 
           <a
-            href="https://discord.gg/TrSrudNUXt"
+            href={LINKS.discord}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.mobileDiscord}

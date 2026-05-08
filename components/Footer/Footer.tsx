@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PiDiscordLogoFill } from "react-icons/pi";
 import styles from "./Footer.module.css";
+import { LINKS } from "@/config/links";
 
 export default function Footer() {
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
         </nav>
 
         <a
-          href="https://discord.gg/TrSrudNUXt"
+          href={LINKS.discord}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.discord}
