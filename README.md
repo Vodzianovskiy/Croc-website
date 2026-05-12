@@ -1,108 +1,108 @@
 # 🐊 CR0C Clan Portal
 
-**CR0C Clan Portal** — это веб-сайт европейского клана **CR0C** по игре **World of Tanks**. Портал предоставляет полную информацию о клане, его участниках, используемой технике, модах, а также позволяет подавать заявки на вступление через Discord.
+**CR0C Clan Portal** is a website for the European **World of Tanks** clan **CR0C**. The portal provides complete information about the clan, its members, vehicles, mods, and allows players to submit join requests via Discord.
 
 ---
 
-## 🚀 Функционал
+## 🚀 Features
 
-### 📊 Статистика клана
+### 📊 Clan Statistics
 
-- **Поиск кланов** — поиск по тегу или названию через Wargaming API
-- **Детальная страница клана** — информация о клане, рейтинг (GM ELO, FB ELO), список участников с пагинацией, данные об укрепрайоне (stronghold)
-- **Недавние поиски** — сохранение последних 5 просмотренных кланов в localStorage
+- **Clan Search** — search by tag or name via the Wargaming API
+- **Detailed Clan Page** — clan info, ratings (GM ELO, FB ELO), member list with pagination, stronghold data
+- **Recent Searches** — stores the last 5 viewed clans in localStorage
 
-### 🎮 Техника клана
+### 🎮 Clan Vehicles
 
-- **Список танков** — все Tier X машины, на которых играет клан
-- **Детальный просмотр** — модальное окно с тремя вкладками:
-  - **Equipment** — снаряжение (доп. оборудование)
-  - **Consumables** — расходники (нация-специфичные пайки)
-  - **Skills** — перки экипажа (6 перков на каждую роль: командир, наводчик, мехвод, заряжающий, радист)
+- **Tank List** — all Tier X vehicles the clan plays
+- **Detailed View** — modal window with three tabs:
+  - **Equipment** — additional equipment
+  - **Consumables** — nation-specific provisions
+  - **Skills** — crew perks (6 perks per role: commander, gunner, driver, loader, radio operator)
 
-### 🛠 Моды
+### 🛠 Mods
 
-- **Список модпаков** — ПРОТанки EU, LeBwa Team с рейтингом и ссылками на скачивание
-- **Модальное окно** — детальное описание мода с кнопками установки
+- **Modpack List** — PROTanki EU, LeBwa Team with ratings and download links
+- **Modal Window** — detailed mod description with install buttons
 
-### 📝 Вступление в клан
+### 📝 Joining the Clan
 
-- **Форма заявки** — поиск игрока по нику, проверка статистики (винрейт ≥ 48%, боёв ≥ 2500)
-- **Выбор техники** — отметка Tier X и Tier VIII танков, которые есть у игрока
-- **Отправка в Discord** — заявка отправляется в Discord-канал через вебхук с лимитом 3 заявки в день с одного IP
+- **Application Form** — search player by nickname, check stats (winrate ≥ 48%, battles ≥ 2500)
+- **Vehicle Selection** — mark Tier X and Tier VIII tanks the player owns
+- **Discord Submission** — application is sent to a Discord channel via webhook, with a limit of 3 applications per day per IP
 
-### 🎨 3D-анимация
+### 🎨 3D Animation
 
-- **Интерактивный крокодил** — 3D-модель на главной странице с анимациями (ходьба, бег, танцы, пробуждение), адаптивная под разрешение экрана
-
----
-
-## 🧱 Технологии
-
-| Технология                                                    | Назначение                              |
-| ------------------------------------------------------------- | --------------------------------------- |
-| **Next.js 16** (App Router)                                   | Фреймворк, серверный рендеринг, роутинг |
-| **React 19**                                                  | UI-библиотека                           |
-| **TypeScript**                                                | Типизация                               |
-| **Three.js** + **@react-three/fiber** + **@react-three/drei** | 3D-графика (модель крокодила)           |
-| **@react-three/postprocessing** + **postprocessing**          | Пост-эффекты для 3D                     |
-| **Axios**                                                     | HTTP-запросы к Wargaming API            |
-| **Formik** + **Yup**                                          | Формы и валидация (заявка в клан)       |
-| **react-paginate**                                            | Пагинация списка игроков                |
-| **react-icons**                                               | Иконки (Discord и др.)                  |
-| **CSS Modules**                                               | Стилизация компонентов                  |
+- **Interactive Crocodile** — 3D model on the main page with animations (walking, running, dancing, waking up), responsive to screen resolution
 
 ---
 
-## 🏗 Архитектура
+## 🧱 Tech Stack
+
+| Technology                                                    | Purpose                                   |
+| ------------------------------------------------------------- | ----------------------------------------- |
+| **Next.js 16** (App Router)                                   | Framework, server-side rendering, routing |
+| **React 19**                                                  | UI library                                |
+| **TypeScript**                                                | Type safety                               |
+| **Three.js** + **@react-three/fiber** + **@react-three/drei** | 3D graphics (crocodile model)             |
+| **@react-three/postprocessing** + **postprocessing**          | Post-processing effects for 3D            |
+| **Axios**                                                     | HTTP requests to Wargaming API            |
+| **Formik** + **Yup**                                          | Forms and validation (clan application)   |
+| **react-paginate**                                            | Player list pagination                    |
+| **react-icons**                                               | Icons (Discord, etc.)                     |
+| **CSS Modules**                                               | Component styling                         |
+
+---
+
+## 🏗 Architecture
 
 ```
 croc-website/
 ├── app/                    # Next.js App Router
-│   ├── api/                # API-роуты (прокси к WG API, Discord webhook, иконки скиллов)
-│   ├── clan/               # Поиск кланов + детальная страница клана
-│   ├── mods/               # Страница модов
-│   ├── mods-preview/       # Редирект на /mods
-│   ├── tanks/              # Техника клана с модальными окнами
-│   └── page.tsx            # Главная страница
-├── components/             # Переиспользуемые компоненты
-│   ├── Header/             # Шапка с навигацией и ссылкой на Discord
-│   ├── Footer/             # Подвал
-│   ├── HeroCroc/           # 3D-сцена с крокодилом
-│   └── JoinUs/             # Форма вступления в клан
-├── config/                 # Конфигурационные файлы
-│   ├── links.ts            # Централизованные ссылки (Discord и др.)
-│   ├── crewBuilds.ts       # Билды перков для каждого танка
-│   ├── mods.ts             # Список модов
-│   └── tankEquipment.ts    # Снаряжение и расходники для танков
-├── services/               # Сервисы для работы с API
-│   ├── clanService.ts      # Wargaming API (кланы, рейтинг, укрепрайон)
-│   └── wotService.ts       # Wargaming API (игроки, статистика, танки)
-├── types/                  # TypeScript-типы
-│   ├── clan.ts             # Типы для кланов
-│   ├── wot.ts              # Типы для WoT API
-│   ├── mod.ts              # Типы для модов
-│   └── crewBuild.ts        # Типы для билдов перков
-└── public/                 # Статические файлы
-    ├── croc.jpg            # OG-изображение
-    └── croc_Animations.glb # 3D-модель крокодила
+│   ├── api/                # API routes (proxy to WG API, Discord webhook, skill icons)
+│   ├── clan/               # Clan search + detailed clan page
+│   ├── mods/               # Mods page
+│   ├── mods-preview/       # Redirect to /mods
+│   ├── tanks/              # Clan vehicles with modals
+│   └── page.tsx            # Main page
+├── components/             # Reusable components
+│   ├── Header/             # Header with navigation and Discord link
+│   ├── Footer/             # Footer
+│   ├── HeroCroc/           # 3D scene with crocodile
+│   └── JoinUs/             # Clan join form
+├── config/                 # Configuration files
+│   ├── links.ts            # Centralized links (Discord, etc.)
+│   ├── crewBuilds.ts       # Crew perk builds for each tank
+│   ├── mods.ts             # Mod list
+│   └── tankEquipment.ts    # Tank equipment and consumables
+├── services/               # API services
+│   ├── clanService.ts      # Wargaming API (clans, ratings, stronghold)
+│   └── wotService.ts       # Wargaming API (players, stats, tanks)
+├── types/                  # TypeScript types
+│   ├── clan.ts             # Clan types
+│   ├── wot.ts              # WoT API types
+│   ├── mod.ts              # Mod types
+│   └── crewBuild.ts        # Crew build types
+└── public/                 # Static files
+    ├── croc.jpg            # OG image
+    └── croc_Animations.glb # 3D crocodile model
 ```
 
 ---
 
-## 🔌 API-эндпоинты
+## 🔌 API Endpoints
 
-| Эндпоинт                        | Описание                                 |
-| ------------------------------- | ---------------------------------------- |
-| `GET /api/wot?endpoint=...`     | Прокси к Wargaming API (скрывает APP_ID) |
-| `POST /api/discord`             | Отправка заявки в Discord через вебхук   |
-| `GET /api/skill-icon?skill=...` | Прокси для иконок перков                 |
+| Endpoint                        | Description                             |
+| ------------------------------- | --------------------------------------- |
+| `GET /api/wot?endpoint=...`     | Proxy to Wargaming API (hides APP_ID)   |
+| `POST /api/discord`             | Send application to Discord via webhook |
+| `GET /api/skill-icon?skill=...` | Proxy for skill icons                   |
 
 ---
 
-## ⚙️ Переменные окружения
+## ⚙️ Environment Variables
 
-Создайте файл `.env.local` в корне проекта:
+Create a `.env.local` file in the project root:
 
 ```env
 WOT_APP_ID=your_wargaming_app_id
@@ -111,24 +111,24 @@ DISCORD_WEBHOOK_URL=your_discord_webhook_url
 
 ---
 
-## 🛠 Запуск
+## 🛠 Getting Started
 
 ```bash
-# Установка зависимостей
+# Install dependencies
 npm install
 
-# Режим разработки
+# Development mode
 npm run dev
 
-# Сборка для продакшена
+# Production build
 npm run build
 
-# Запуск продакшен-сборки
+# Start production server
 npm start
 ```
 
 ---
 
-## 📄 Лицензия
+## 📄 License
 
-Все права защищены. CR0C Clan © 2026.
+All rights reserved. CR0C Clan © 2026.
