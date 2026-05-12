@@ -23,7 +23,8 @@
 ### 🛠 Mods
 
 - **Modpack List** — PROTanki EU, LeBwa Team with ratings and download links
-- **Modal Window** — detailed mod description with install buttons
+- **Modal Window** — detailed mod description with install buttons (via intercepting routes)
+- **Mods Preview** — quick mod overview modal on the homepage
 
 ### 📝 Joining the Clan
 
@@ -34,6 +35,16 @@
 ### 🎨 3D Animation
 
 - **Interactive Crocodile** — 3D model on the main page with animations (walking, running, dancing, waking up), responsive to screen resolution
+
+### ℹ️ Clan Info Cards
+
+- **Interactive Feature Cards** — clickable cards on the homepage (Maneuvers & GM, Tournaments, Discord chat, Helping each other, Play 3 times a week, European clan) with detailed modal descriptions
+
+### 🗺 Navigation & UX
+
+- **Responsive Header** — navigation with active link highlighting, Discord button, and mobile burger menu with keyboard (Escape) support
+- **Footer** — quick navigation links and Discord invite
+- **Custom 404 Page** — glitch-style not-found page with 3-second countdown auto-redirect to homepage
 
 ---
 
@@ -61,22 +72,32 @@ croc-website/
 ├── app/                    # Next.js App Router
 │   ├── api/                # API routes (proxy to WG API, Discord webhook, skill icons)
 │   ├── clan/               # Clan search + detailed clan page
+│   │   └── [id]/           # Dynamic clan detail page (info, rating, members, stronghold)
 │   ├── mods/               # Mods page
+│   │   └── [id]/           # Redirects to /mods
 │   ├── mods-preview/       # Redirect to /mods
 │   ├── tanks/              # Clan vehicles with modals
-│   └── page.tsx            # Main page
+│   │   └── TankModal/      # Tank detail modal (Equipment, Consumables, Skills tabs)
+│   ├── @modal/             # Parallel route for intercepting modals
+│   │   ├── (.)mods/        # Intercepted mod detail modal
+│   │   └── (.)mods-preview/# Intercepted mods preview modal
+│   ├── not-found.tsx       # Custom 404 page with auto-redirect
+│   └── page.tsx            # Main page (hero, about, tanks preview, clan stats cards)
 ├── components/             # Reusable components
-│   ├── Header/             # Header with navigation and Discord link
-│   ├── Footer/             # Footer
+│   ├── Header/             # Header with navigation, Discord link, mobile burger menu
+│   ├── Footer/             # Footer with navigation and Discord invite
 │   ├── HeroCroc/           # 3D scene with crocodile
-│   └── JoinUs/             # Clan join form
+│   ├── JoinUs/             # Clan join form (modal with player search, stats check, tank selection)
+│   ├── ClanStatsClick/     # Interactive feature cards on homepage
+│   └── ClanStatsModal/     # Modal for feature card details
 ├── config/                 # Configuration files
 │   ├── links.ts            # Centralized links (Discord, etc.)
 │   ├── crewBuilds.ts       # Crew perk builds for each tank
 │   ├── mods.ts             # Mod list
-│   └── tankEquipment.ts    # Tank equipment and consumables
+│   ├── tankEquipment.ts    # Tank equipment and consumables
+│   └── clanStatsContent.ts # Content for homepage feature cards
 ├── services/               # API services
-│   ├── clanService.ts      # Wargaming API (clans, ratings, stronghold)
+│   ├── clanService.ts      # Wargaming API (clans, ratings, stronghold, tanks, provisions, skills)
 │   └── wotService.ts       # Wargaming API (players, stats, tanks)
 ├── types/                  # TypeScript types
 │   ├── clan.ts             # Clan types
